@@ -3,7 +3,7 @@ import { User } from "@phosphor-icons/react";
 function Home() {
     return (
         <>
-        <div className='grid grid-cols-3 gap-4'>
+        <div className='grid grid-cols-3'>
             <div className='border-2 border-black h-screen p-20'>
                 <div className='border-2 border-black h-4/5 p-20'>
                     <User size={48} weight='bold' />
