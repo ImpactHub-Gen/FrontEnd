@@ -33,23 +33,23 @@ function Sobre() {
                     <h2 className="text-3xl font-bold mb-4 text-blue-800">Conheça o Nosso Time</h2>
                 </div>
                 <div className="flex justify-center">
-                    <div className="px-14">
+                    <div className="px-14 text-center">
                         <img src={sobreLogoAna} alt="ana" className="w-20 h-20 object-cover rounded-full mb-2" />
                         <p className="text-black-600 text-center font-bold">Ana Paula</p>
                     </div>
-                    <div className="px-14">
+                    <div className="px-14 text-center">
                         <img src={sobreLogoBreno} alt="breno"className="w-20 h-20 object-cover rounded-full mb-2" />
                         <p className="text-black-600 text-center font-bold">Breno Menezes</p>
                     </div>
-                    <div className="px-14">
+                    <div className="px-14 text-center">
                         <img src={sobreLogoNayane} alt="nayane"className="w-20 h-20 object-cover rounded-full mb-2" />
                         <p className="text-black-600 text-center font-bold">Nayane Rosa</p>
                     </div>
-                    <div className="px-14">
+                    <div className="px-14 text-center">
                         <img src={sobreLogoEwerton} alt="ewerton"className="w-20 h-20 object-cover rounded-full mb-2" />
                         <p className="text-black-600 text-center font-bold">Ewerton Gustavo</p>
                     </div>
-                    <div className="">
+                    <div className="px-14 text-center">
                         <img src={sobreLogoLuis} alt="luis"className="w-20 h-20 object-cover rounded-full mb-2" />
                         <p className="text-black-600 text-center font-bold">Luís Felipe</p>
                     </div>
