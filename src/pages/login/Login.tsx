@@ -3,7 +3,6 @@ import {Link, useNavigate} from 'react-router-dom'
 import {AuthContext} from '../../contexts/AuthContext'
 import {RotatingLines} from 'react-loader-spinner'
 import UsuarioLogin from '../../models/UsuarioLogin'
-import './Login.css';
 
 function Login() {
     let navigate = useNavigate()
@@ -36,34 +35,35 @@ function Login() {
     
     return (
         <>
-            <div className='grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold'>
-                <form className='flex justify-center items-center flex-col w-1/2 gap-4' onSubmit={login}>
-                    <h2 className='text-slate-900 text-5xl'>Entrar</h2>
+            <div className='p-20 h-screen w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gray'>
+                <div className="content text-3xl text-center md:text-left">
+                    <h1 className="text-5xl text-orange-hl font-bold">ImpactHub</h1>
+                    <p>Construindo conexões, impulsionando mudanças</p>
+                </div>
+                <form className='shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg container mx-24 items-center' onSubmit={login}>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="email">E-mail</label>
                         <input 
                             type="text"
                             id="email"
                             name="email"
                             placeholder="E-mail"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="mb-3 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuarioLogin.email}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
                         <input 
                             type="password"
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="mb-3 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuarioLogin.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
-                    <button type='submit' className='rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center'>
+                    <button type='submit' className='w-full bg-orange-hl hover:bg-orange-normal text-white p-3 rounded-lg font-semibold text-lg flex justify-center'>
                         {isLoading ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"
@@ -71,19 +71,18 @@ function Login() {
                             width="24"
                             visible={true}
                             /> :
-                        <span>Entrar</span>}
+                        <span className='text-xl'>Entrar</span>}
                     </button>
                     
-                    <hr className='border-slate-800 w-full'/>
+                    <hr className='border-gray-hl w-full my-6'/>
 
                     <p>
-                        Ainda não tem uma conta?{''}
-                        <Link to="/cadastro" className="text-indigo-800 hover:underline">
-                            Cadastre-se
+                        Ainda não tem uma conta? {''}
+                        <Link to="/cadastro" className="text-orange-hl font-bold  hover:text-orange-normal"> 
+                        Cadastre-se
                         </Link>
                     </p>
                 </form>
-                <div className="fundoLogin hidden lg:block"></div>
             </div>
         </>
     );
