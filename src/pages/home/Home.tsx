@@ -1,22 +1,56 @@
 import { User } from "@phosphor-icons/react";
+import { Images, Compass } from "@phosphor-icons/react";
 
 function Home() {
     return (
         <>
         <div className='grid grid-cols-3'>
-            <div className='border-2 border-black h-screen p-20'>
-                <div className='border-2 border-black h-4/5 p-20'>
-                    <User size={48} weight='bold' />
-                    Informações do Perfil
+            <div className='flex h-screen p-32'>
+                <div className='border-2 border-black w-full h-2/4 p-10 rounded-lg'>
+                    <div className='grid grid-rows-2 justify-items-center'>
+                        <User size={48} weight='bold' />
+                        Informações do Perfil
+                    </div>
                 </div>
             </div>
-            <div className='border-2 border-black h-screen p-8'>
-                <div className='border-2 border-black h-2/5'>
-                    <h2 className='text-lg font-bold m-2'>Titulo</h2>
-                    <textarea className='border-2 border-black m-8' name="text" rows={4} cols={55} placeholder="Escreva seu texto aqui" />
+            <div className='h-screen '>
+                <div className='grid grid-rows-3 border-2 border-black rounded-lg'>
+                    <label htmlFor="titulo" className="hidden">Título</label>
+                    <input className="border-2 border-black my-2 mx-5 rounded-full placeholder:leading-3 placeholder:pl-2 pl-2" type="text" name="titulo" placeholder="Título da postagem"/>
+
+                    <label htmlFor="texto" className="hidden">Texto</label>
+                    <textarea className='resize-none  border-2 border-black mx-5 rounded-full placeholder:leading-10 placeholder:pl-2 pl-2' name="text" placeholder="Escreva seu texto aqui" />
+
+                    <div className='flex justify-between mx-8'>
+                        <div className='flex justify-start gap-8'>
+                            <button className='flex flex-row items-center'>
+                                <Images size={32} />
+                                Imagem
+                            </button>
+                            <button className='flex flex-row items-center'>
+                                <Compass size={32} />
+                                Localização
+                            </button>
+                        </div>
+                        <div className='flex border-2 border-black my-2 px-5 rounded-full'>
+                            <button>
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    Lista de postagens
                 </div>
             </div>
-            <div className='border-2 border-black h-screen'></div>
+            <div className='flex h-screen p-20 justify-center'>
+                <div className='border-2 border-black w-full h-2/4 p-20 rounded-lg'>
+                    <div className='grid grid-rows-2 justify-items-center'>
+                        <Images size={48} weight='bold' />
+                        Postagens prioritárias
+                    </div>
+                </div>
+            </div>
         </div>
       </>
     );
