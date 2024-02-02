@@ -63,7 +63,7 @@ function Login() {
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
-                    <button type='submit' className='w-full bg-orange-hl hover:bg-orange-normal text-white p-3 rounded-lg font-semibold text-lg flex justify-center'>
+                    <button type='submit' className='w-full bg-orange-hl hover:bg-orange-400 text-white p-3 rounded-lg font-semibold text-lg flex justify-center'>
                         {isLoading ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"
@@ -78,7 +78,7 @@ function Login() {
 
                     <p>
                         Ainda não tem uma conta? {''}
-                        <Link to="/cadastro" className="text-orange-hl font-bold  hover:text-orange-normal"> 
+                        <Link to="/cadastro" className="text-orange-hl font-bold  hover:text-orange-400"> 
                         Cadastre-se
                         </Link>
                     </p>
