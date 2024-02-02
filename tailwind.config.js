@@ -15,8 +15,9 @@ module.exports = {
         'orange-hl': '#f89e51',
         'blue-normal': '#2075c0',
         'blue-hl': '#195a94',
-      }
+      },
     },
   },
+  variants: {},
   plugins: [],
 }

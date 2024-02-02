@@ -74,108 +74,107 @@ function Cadastro() {
     }
     return (
         <>
-            <div className='grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold'>
-                <div className='fundoCadastro hidden lg:block'></div>
-                <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
-                    <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+            <div className='w-screen h-screen bg-gray-50 flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 bg-gray'>
+                <h2 className='text-orange-hl font-bold text-6xl mb-12'>ImpactHub</h2>
+                <form className='flex justify-center items-center flex-col w-1/3 gap-3 bg-white p-5 rounded-lg' onSubmit={cadastrarNovoUsuario}>
+                    <p className='text-black text-2xl justify-center font-semibold'>Criar uma nova conta</p>
+                    <hr className='border-gray-hl w-full my-3'/>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="nome">Nome</label>
+                        <label htmlFor="tipo" className='font-semibold mb-2'>Tipo de conta</label>
+                        <div>
+                            <label htmlFor="pessoafisica" className='mr-2 mt-2'>
+                                <input 
+                                    type="radio"
+                                    id="pessoafisica"
+                                    name="tipo"
+                                    value="Pessoa Física"
+                                    defaultChecked
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                                    className='mr-1 accent-orange-600'
+                                />
+                                Pessoa Física
+                            </label>
+                            <label htmlFor="instituicao" className='ml-2'>
+                                <input 
+                                    type="radio"
+                                    id="instituicao"
+                                    name="tipo"
+                                    value="Instituição"
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                                    className='mr-1 accent-orange-600'
+                                />
+                                Instituição
+                            </label>
+                        </div>
+                    </div>
+                    <div className='flex flex-col w-full'>
                         <input 
                             type="text"
                             id="nome"
                             name="nome"
                             placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="mt-2 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuario.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="tipo">Tipo de conta</label>
-                        <label htmlFor="pessoafisica">
-                            <input 
-                                type="radio"
-                                id="pessoafisica"
-                                name="tipo"
-                                value="Pessoa física"
-                                defaultChecked
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                            />
-                            Pessoa física
-                        </label>
-                        <label htmlFor="instituicao">
-                            <input 
-                                type="radio"
-                                id="instituicao"
-                                name="tipo"
-                                value="Instituição"
-                                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                            />
-                            Instituição
-                        </label>
-                    </div>
-                    <div className='flex flex-col w-full'>
-                        <label htmlFor="foto">Foto</label>
                         <input 
                             type="text"
                             id="foto"
                             name="foto"
-                            placeholder="Link da foto"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Link da sua foto de perfil"
+                            className="mt-2 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuario.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="email">E-mail</label>
                         <input 
                             type="text"
                             id="email"
                             name="email"
                             placeholder="E-mail"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="mt-2 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuario.email}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className='flex flex-col w-full'>
-                        <label htmlFor="telefone">Telefone</label>
                         <input 
                             type="text"
                             id="telefone"
                             name="telefone"
                             placeholder="Telefone"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="mt-2 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuario.telefone}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
                         <input 
                             type="password"
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="mt-2 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuario.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <div className="flex flex-col w-full">
-                        <label htmlFor="confirmarSenha">Confirmar Senha</label>
                         <input 
                             type="password"
                             id="confirmarSenha"
                             name="confirmarSenha"
-                            placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            placeholder="Confirme sua senha"
+                            className="mt-2 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={confirmaSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                         />
                     </div>
-                    <div className="flex justify-around w-full gap-8">
-                        <button className='rounded text-white bg-orange-normal hover:bg-indigo-900 w-1/2 py-2' type='submit'>
+                    <div className="flex justify-around w-full gap-8 my-5">
+                        <button className='rounded text-white bg-orange-hl hover:bg-orange-400 w-1/2 py-2' type='submit'>
                         {isLoading ? <RotatingLines
                             strokeColor="white"
                             strokeWidth="5"
@@ -183,16 +182,16 @@ function Cadastro() {
                             width="24"
                             visible={true}
                         /> :
-                        <span>Cadastrar</span>}
+                        <span className='font-semibold'>Cadastrar</span>}
                         </button>
-                        <button className='rounded text-white bg-gray-hl hover:bg-red-700 w-1/2 py-2' onClick={retornar}>
-                            Cancelar
-                        </button>
+                    </div>
+                    <hr className='border-gray-hl w-full'/>
+                    <div className='mt-2'>
+                        <p className='hover:text-orange-hl cursor-pointer' onClick={retornar}>Já possui uma conta?</p>
                     </div>
                 </form>
             </div>
         </>
-        
     )
 }
 
