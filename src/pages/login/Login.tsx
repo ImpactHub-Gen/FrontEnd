@@ -73,9 +73,7 @@ function Login() {
                             /> :
                         <span className='text-xl'>Entrar</span>}
                     </button>
-                    
                     <hr className='border-gray-hl w-full my-6'/>
-
                     <p>
                         Ainda não tem uma conta? {''}
                         <Link to="/cadastro" className="text-orange-hl font-bold  hover:text-orange-400"> 

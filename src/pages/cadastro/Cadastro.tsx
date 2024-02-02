@@ -1,7 +1,6 @@
 import {ChangeEvent, useEffect, useState, useContext} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {cadastrarUsuario} from '../../services/Service'
-import {AuthContext} from '../../contexts/AuthContext'
 import {RotatingLines} from 'react-loader-spinner'
 import Usuario from '../../models/Usuario'
 
@@ -11,7 +10,7 @@ function Cadastro() {
 
     const [confirmaSenha, setConfirmaSenha] = useState<string>("")
 
-    const {isLoading} = useContext(AuthContext)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const [usuario, setUsuario] = useState<Usuario>({
         id: 0,
@@ -57,6 +56,8 @@ function Cadastro() {
     async function cadastrarNovoUsuario(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
+        setIsLoading(true)
+
         if (confirmaSenha === usuario.senha && usuario.senha.length >= 8) {
             
             try {
@@ -71,12 +72,14 @@ function Cadastro() {
             setUsuario({...usuario, senha:""})
             setConfirmaSenha("")
         }
+
+        setIsLoading(false)
     }
     return (
         <>
             <div className='w-screen h-screen bg-gray-50 flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 bg-gray'>
                 <h2 className='text-orange-hl font-bold text-6xl mb-12'>ImpactHub</h2>
-                <form className='flex justify-center items-center flex-col w-1/3 gap-3 bg-white p-5 rounded-lg' onSubmit={cadastrarNovoUsuario}>
+                <form className='flex justify-center items-center flex-col w-1/3 gap-3 bg-white p-5 rounded-lg shadow-lg' onSubmit={cadastrarNovoUsuario}>
                     <p className='text-black text-2xl justify-center font-semibold'>Criar uma nova conta</p>
                     <hr className='border-gray-hl w-full my-3'/>
                     <div className='flex flex-col w-full'>
@@ -174,15 +177,16 @@ function Cadastro() {
                         />
                     </div>
                     <div className="flex justify-around w-full gap-8 my-5">
-                        <button className='rounded text-white bg-orange-hl hover:bg-orange-400 w-1/2 py-2' type='submit'>
-                        {isLoading ? <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span className='font-semibold'>Cadastrar</span>}
+                        <button className='rounded text-white bg-orange-hl hover:bg-orange-400 w-1/2 py-2 flex justify-center' type='submit'>
+                             {
+                                isLoading ? <RotatingLines
+                                    strokeColor="white"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="24"
+                                    visible={true}
+                                /> : 
+                                    <span>Cadastrar</span>}
                         </button>
                     </div>
                     <hr className='border-gray-hl w-full'/>
