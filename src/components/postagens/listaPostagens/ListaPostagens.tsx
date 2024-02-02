@@ -3,7 +3,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { toastAlerta } from "../../../utils/toastAlerta";
 import { buscar } from "../../../services/Service";
-import { Comment } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 import CardPostagem from "../cardPostagem/CardPostagem";
 
@@ -45,15 +45,15 @@ function ListaPostagens() {
     return (
         <>
             {postagens.length === 0 && (
-                <Comment
+                <ThreeDots
                 visible={true}
                 height="200"
                 width="200"
-                ariaLabel="comment-loading"
+                color="#4fa94d"
+                radius="9"
+                ariaLabel="three-dots-loading"
                 wrapperStyle={{}}
-                wrapperClass="comment-wrapper"
-                color="#fff"
-                backgroundColor="#F4442E"
+                wrapperClass=""
                 />
             )}
             <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>

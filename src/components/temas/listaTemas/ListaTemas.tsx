@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+import { useContext, useEffect, useState } from 'react';
+import { DNA } from 'react-loader-spinner';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
@@ -41,7 +41,7 @@ function ListaTemas() {
   return (
     <>
       {temas.length === 0 && (
-        <Dna
+        <DNA
           visible={true}
           height="200"
           width="200"
