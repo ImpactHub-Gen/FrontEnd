@@ -1,5 +1,7 @@
 import { User } from "@phosphor-icons/react";
 import { Images, Compass } from "@phosphor-icons/react";
+import ListaPostagens from "../../components/postagens/listaPostagens/ListaPostagens";
+import ModalPostagem from "../../components/postagens/modalPostagem/ModalPostagem";
 
 function Home() {
     return (
@@ -33,14 +35,12 @@ function Home() {
                             </button>
                         </div>
                         <div className='flex border-2 border-black my-2 px-5 rounded-full'>
-                            <button>
-                                Enviar
-                            </button>
+                                <ModalPostagem />
                         </div>
                     </div>
                 </div>
-                <div>
-                    Lista de postagens
+                <div className=''>
+                    <ListaPostagens />
                 </div>
             </div>
             <div className='flex h-screen p-20 justify-center'>
