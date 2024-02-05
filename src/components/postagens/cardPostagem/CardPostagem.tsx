@@ -18,7 +18,7 @@ function CardPostagem({post}: CardPostagemProps) {
                     <p>{post.texto}</p>
                     <p>{post.imagem}</p>
                     <p>{post.localizacao}</p>
-                    <p>Tema: {post.tema?.descricao}</p>
+                    <p>Tema: {post.tema?.nome}</p>
                     <p>Data: {new Intl.DateTimeFormat(undefined, {
                             dateStyle: 'full',
                             timeStyle: 'medium',
