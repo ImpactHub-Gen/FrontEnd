@@ -35,3 +35,5 @@ function Footer() {
 }
 
 export default Footer
+
+// bg-gradient-to-r from-orange-400 to-blue-500 py-12"
