@@ -7,7 +7,12 @@ import Tema from "../../../models/Tema"
 import Postagem from "../../../models/Postagem"
 import { toastAlerta } from "../../../utils/toastAlerta"
 
-function FormularioPostagem() {
+interface FormularioPostagemProps {
+    setPosts?: (value: Postagem[]) => void
+    posts?: Postagem[]
+}
+
+function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
     let navigate = useNavigate()
 
     const { id } = useParams<{ id: string }>()
@@ -25,7 +30,7 @@ function FormularioPostagem() {
     })
 
     const [postagem, setPostagem] = useState<Postagem>({
-        id:0,
+        id: 0,
         titulo: '',
         texto: '',
         localizacao: '',
@@ -90,10 +95,6 @@ function FormularioPostagem() {
         })
     }
 
-    function retornar() {
-        navigate('/home')
-    }
-
     async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
@@ -105,7 +106,6 @@ function FormularioPostagem() {
                     },
                 })
                 toastAlerta('Postagem atualizada com sucesso', 'sucesso')
-                retornar()
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
@@ -123,9 +123,22 @@ function FormularioPostagem() {
                     },
                 })
 
-                retornar()
-
                 toastAlerta('Postagem cadastrada com sucesso', 'sucesso')
+
+                if (setPosts != undefined && posts != undefined) {
+                    setPosts([...posts, postagem])
+                }
+
+                setPostagem({
+                    id: 0,
+                    titulo: '',
+                    texto: '',
+                    localizacao: '',
+                    imagem: '',
+                    data: '',
+                    tema: null,
+                    usuario: null
+                })
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
@@ -145,7 +158,7 @@ function FormularioPostagem() {
             <h1 className='text-4xl text-center my-8'>{id !== undefined ? 'Editar postagem' : 'Cadastrar postagem'}</h1>
 
             <form onSubmit={gerarNovaPostagem} className='flex flex-col w-1/2 gap-4'>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col'>
                     <label htmlFor="titulo">Titulo da postagem</label>
                     <input 
                         value={postagem.titulo}
@@ -157,7 +170,7 @@ function FormularioPostagem() {
                         className="border-2 border-slate-700 rounded p-2"
                     />
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col'>
                     <label htmlFor="titulo">Texto da postagem</label>
                     <input
                         value={postagem.texto}
@@ -169,7 +182,7 @@ function FormularioPostagem() {
                         className="border-2 border-slate-700 rounded p-2"
                     />
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col'>
                     <label htmlFor="titulo">Localização</label>
                     <input
                         value={postagem.localizacao}
@@ -180,7 +193,7 @@ function FormularioPostagem() {
                         className="border-2 border-slate-700 rounded p-2"
                     />
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col'>
                     <label htmlFor="titulo">Imagem</label>
                     <input 
                         value={postagem.imagem}
@@ -191,7 +204,7 @@ function FormularioPostagem() {
                         className="border-2 border-slate-700 rounded p-2"
                     />
                 </div>
-                <div className='flex flex-col gap-2'>
+                <div className=' flex flex-col'>
                     <p>Tema da postagem</p>
                     <select name="tema" id="tema" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
                         <option value="" selected disabled>Selecione um tema</option>

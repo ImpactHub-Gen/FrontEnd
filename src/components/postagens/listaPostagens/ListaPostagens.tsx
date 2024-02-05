@@ -1,50 +1,24 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { toastAlerta } from "../../../utils/toastAlerta";
-import { buscar } from "../../../services/Service";
+import { useEffect } from "react";
 import { ThreeDots } from "react-loader-spinner";
 
 import CardPostagem from "../cardPostagem/CardPostagem";
 
 import Postagem from "../../../models/Postagem";
 
-function ListaPostagens() {
-    const [postagens, setPostagens] = useState<Postagem[]>([])
+interface ListaPostagensProps {
+    posts: Postagem[]
+    getPosts: () => void
+}
 
-    let navigate = useNavigate()
-
-    const {usuario, handleLogout} = useContext(AuthContext)
-    const token = usuario.token
-
+function ListaPostagens({getPosts, posts}: ListaPostagensProps) {
+    
     useEffect(() => {
-        if (token === '') {
-            toastAlerta('Você precisa estar logado', 'erro')
-            navigate('/')
-        }
-    }, [token])
-
-    async function buscarPostagens() {
-        try {
-            await buscar('/postagens', setPostagens, {
-                headers: {
-                    Authorization: token,
-                },
-            })
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-                toastAlerta('O token expirou, favor logar novamente', 'erro')
-            }
-        }
-    }
-
-    useEffect(() => {
-        buscarPostagens()
-    }, [postagens.length])
+        getPosts()
+    }, [posts.length])
 
     return (
         <>
-            {postagens.length === 0 && (
+            {posts.length === 0 && (
                 <ThreeDots
                 visible={true}
                 height="200"
@@ -57,7 +31,7 @@ function ListaPostagens() {
                 />
             )}
             <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
-                {postagens.map((postagem) => (
+                {posts.map((postagem) => (
                     <CardPostagem key={postagem.id} post={postagem} />
                 ))}
             </div>
