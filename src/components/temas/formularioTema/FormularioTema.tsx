@@ -97,53 +97,53 @@ function FormularioTema() {
   }, [token]);
 console.log(tema)
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
-        {id === undefined ? 'Cadastre um novo tema' : 'Editar tema'}
-      </h1>
+      <div className="container flex flex-col items-center justify-center mx-auto max-w-6xl bg-white">
+        <h1 className="text-4xl text-center my-8">
+          {id === undefined ? 'Cadastre um novo tema' : 'Editar tema'}
+        </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nome">Tema</label>
-          <input
-            type="text"
-            placeholder="Tema da postagem"
-            name='nome'
-            className="border-2 border-slate-700 rounded p-2"
-            value={tema.nome}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="descricao">Descrição do tema</label>
-          <input
-            type="text"
-            placeholder="Descrição"
-            name='descricao'
-            className="border-2 border-slate-700 rounded p-2"
-            value={tema.descricao}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="nivelUrgencia">Nível de urgência</label>
-          <input
-            type="text"
-            placeholder="Baixo/Médio/Alto"
-            name='nivelUrgencia'
-            className="border-2 border-slate-700 rounded p-2"
-            value={tema.nivelUrgencia}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-        <button
-          className="rounded text-slate-100 bg-zinc-300 hover:bg-zinc-500 w-1/2 py-2 mx-auto block"
-          type="submit"
-        >
-          {id === undefined ? 'Cadastrar' : 'Editar'}
-        </button>
-      </form>
-    </div>
+        <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="nome">Tema</label>
+            <input
+              type="text"
+              placeholder="Tema da postagem"
+              name='nome'
+              className="border-2 border-slate-700 rounded p-2"
+              value={tema.nome}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="descricao">Descrição do tema</label>
+            <input
+              type="text"
+              placeholder="Descrição"
+              name='descricao'
+              className="border-2 border-slate-700 rounded p-2"
+              value={tema.descricao}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="nivelUrgencia">Nível de urgência</label>
+            <input
+              type="text"
+              placeholder="Baixo/Médio/Alto"
+              name='nivelUrgencia'
+              className="border-2 border-slate-700 rounded p-2"
+              value={tema.nivelUrgencia}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            />
+          </div>
+          <button
+            className="rounded text-slate-100 bg-zinc-300 hover:bg-zinc-500 w-1/2 py-2 mx-auto block"
+            type="submit"
+          >
+            {id === undefined ? 'Cadastrar' : 'Editar'}
+          </button>
+        </form>
+      </div>
   );
 }
 
