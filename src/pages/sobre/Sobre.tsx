@@ -30,7 +30,7 @@ function Sobre() {
                 </div>
 
                 {/* Conheça nosso time */}
-                <div className="bg-white max-w-6xl my-12 pb-8 rounded-md shadow-lg">
+                <div className="bg-white max-w-6xl mt-8 pb-8 rounded-md shadow-lg">
                     <div className="mt-2 text-center">
                         <h2 className="text-3xl font-bold mb-12 mt-8 text-orange-hl">Conheça o Nosso Time</h2>
                     </div>
