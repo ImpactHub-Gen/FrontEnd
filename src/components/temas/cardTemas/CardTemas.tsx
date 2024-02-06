@@ -7,7 +7,7 @@ interface CardTemaProps {
 
 function CardTemas({tema}: CardTemaProps) {
   return (
-    <div className=' flex flex-col overflow-hidden justify-between rounded-lg shadow-lg'>
+    <div className='flex flex-col overflow-hidden justify-between rounded-lg shadow-lg'>
        <header className='py-2 px-6 bg-orange-hl text-white font-semibold text-2xl'>{tema.nome}</header>
       <p className='p-6 text-3xl bg-white h-full'>{tema.descricao}</p>
       <p className='p-6 text-3xl bg-white h-full'>Nivel de Urgência: {tema.nivelUrgencia}</p>

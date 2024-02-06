@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { DNA } from 'react-loader-spinner';
+import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
@@ -40,16 +40,19 @@ function ListaTemas() {
   }, [temas.length]);
   return (
     <>
-      {temas.length === 0 && (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
+        {temas.length === 0 && (
+          <div className='flex w-full justify-center ml-80 pl-80 '>
+            <ThreeDots
+              visible={true}
+              color='orange'
+              height="200"
+              width="200"
+              ariaLabel="dna-loading"
+              wrapperStyle={{}}
+              wrapperClass="dna-wrapper mx-auto"
+            />
+          </div>
+          )}
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
