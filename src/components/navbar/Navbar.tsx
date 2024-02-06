@@ -18,9 +18,16 @@ function Navbar() {
 
     if(usuario.token !== "") {
       navbarComponent = (
-        <div className='w-full flex justify-center bg-gradient-to-r from-orange-400 to-blue-hl py-10'>
+        <div className='w-full flex justify-center bg-gradient-to-r from-orange-400 to-blue-hl py-10 h-28'>
           <div className='container flex justify-between text-lg'>
-            <Link to='/home' className='text-2xl font-bold'>ImpactHub</Link>
+          <Link to='/home' className='text-2xl font-bold'>
+            <img
+              src='https://media.discordapp.net/attachments/1180165078037827635/1204424420941369354/ImpactHub_navbar.png?ex=65d4aea7&is=65c239a7&hm=b87ce4928f691522e16d1bde012a617a7061579dc3471a7ecee8483d564ff95a&=&format=webp&quality=lossless'
+              alt='Logo'
+              className='h-12 '
+              style={{ height: '150%' }} 
+            />
+          </Link>
             <div>
                 <input className='w-96 border-2 border-black' type="search" name="" id="" />
             </div>
