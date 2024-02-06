@@ -7,15 +7,15 @@ interface CardTemaProps {
 
 function CardTemas({tema}: CardTemaProps) {
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-       <header className='py-2 px-6 bg-zinc-400 text-white font-bold text-2xl'>{tema.nome}</header>
-      <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
-      <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.nivelUrgencia}</p>
+    <div className=' flex flex-col overflow-hidden justify-between rounded-lg shadow-lg'>
+       <header className='py-2 px-6 bg-orange-hl text-white font-semibold text-2xl'>{tema.nome}</header>
+      <p className='p-6 text-3xl bg-white h-full'>{tema.descricao}</p>
+      <p className='p-6 text-3xl bg-white h-full'>Nivel de Urgência: {tema.nivelUrgencia}</p>
       <div className="flex">
-        <Link to={`/editarTema/${tema.id}`} className='w-full text-slate-100 bg-zinc-300 hover:bg-zinc-400 flex items-center justify-center py-2'>
+        <Link to={`/editarTema/${tema.id}`} className='w-full text-white bg-blue-normal hover:bg-blue-hl flex items-center justify-center py-2 font-semibold'>
           <button>Editar</button>
         </Link>
-        <Link to={`/deletarTema/${tema.id}`} className='text-slate-100 bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
+        <Link to={`/deletarTema/${tema.id}`} className='text-white bg-orange-hl hover:bg-orange-normal w-full flex items-center justify-center font-semibold'>
           <button>Deletar</button>
         </Link>
       </div>

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
@@ -30,6 +30,15 @@ function FormularioTema() {
   }, [id])
 
   function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+    setTema({
+      ...tema,
+      [e.target.name]: e.target.value
+    })
+
+    console.log(JSON.stringify(tema))
+  }
+
+  function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
     setTema({
       ...tema,
       [e.target.name]: e.target.value
@@ -115,13 +124,13 @@ console.log(tema)
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="descricao" className='w-full font-semibold'>Descrição do tema</label>
-            <input
-              type="text"
+            <textarea
               placeholder="Descrição"
+              rows={5}
               name='descricao'
               className="w-96 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
               value={tema.descricao}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
             />
           </div>
           <div className="flex flex-col gap-2">

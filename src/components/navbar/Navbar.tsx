@@ -18,7 +18,7 @@ function Navbar() {
 
     if(usuario.token !== "") {
       navbarComponent = (
-        <div className='w-full flex justify-center p-4 bg-gradient-to-r from-orange-400 to-blue-hl py-8'>
+        <div className='w-full flex justify-center bg-gradient-to-r from-orange-400 to-blue-hl py-10'>
           <div className='container flex justify-between text-lg'>
             <Link to='/home' className='text-2xl font-bold'>ImpactHub</Link>
             <div>
