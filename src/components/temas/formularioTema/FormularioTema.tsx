@@ -128,7 +128,7 @@ console.log(tema)
               placeholder="Descrição"
               rows={5}
               name='descricao'
-              className="w-96 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
+              className="w-96 py-3 px-4 border resize-none border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
               value={tema.descricao}
               onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
             />

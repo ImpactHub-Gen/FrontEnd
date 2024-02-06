@@ -23,7 +23,7 @@ function ListaPostagens({getPosts, posts}: ListaPostagensProps) {
                 visible={true}
                 height="200"
                 width="200"
-                color="#4fa94d"
+                color="orange"
                 radius="9"
                 ariaLabel="three-dots-loading"
                 wrapperStyle={{}}
