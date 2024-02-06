@@ -37,8 +37,8 @@ function Login() {
         <>
             <div className='p-20 h-screen w-screen flex flex-col-reverse md:flex-row items-center justify-center bg-gray'>
                 <div className="content text-3xl text-center md:text-left">
-                    <h1 className="text-5xl text-orange-hl font-bold">ImpactHub</h1>
-                    <p>Construindo conexões, impulsionando mudanças</p>
+                <img src="https://media.discordapp.net/attachments/1180165078037827635/1204406380178440222/ImpactHub_Login.gif?ex=65d49dd9&is=65c228d9&hm=7c1eb62b986803a4776a7defa891a6dfa8ec1050ee3bf08eb386bc7c4a3d44ba&=&width=559&height=559"></img>
+
                 </div>
                 <form className='shadow-lg w-80 p-4 flex flex-col bg-white rounded-lg container mx-24 items-center' onSubmit={login}>
                     <div className='flex flex-col w-full'>
