@@ -24,13 +24,10 @@ function Navbar() {
             <img
               src='https://media.discordapp.net/attachments/1180165078037827635/1204424420941369354/ImpactHub_navbar.png?ex=65d4aea7&is=65c239a7&hm=b87ce4928f691522e16d1bde012a617a7061579dc3471a7ecee8483d564ff95a&=&format=webp&quality=lossless'
               alt='Logo'
-              className='h-12 '
+              className='h-12 -mt-3'
               style={{ height: '150%' }} 
             />
           </Link>
-            <div>
-                <input className='w-96 border-2 border-black' type="search" name="" id="" />
-            </div>
             <div className='flex gap-4 text-white font-semibold'>
               <Link to='/home' className='hover:text-orange-hl'>Home</Link>
               <Link to='/temas' className='hover:text-orange-hl'>Temas</Link>

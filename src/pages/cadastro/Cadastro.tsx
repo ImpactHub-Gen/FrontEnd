@@ -3,6 +3,8 @@ import {useNavigate} from 'react-router-dom'
 import {cadastrarUsuario} from '../../services/Service'
 import {RotatingLines} from 'react-loader-spinner'
 import Usuario from '../../models/Usuario'
+import logoCadastro from "../../assets/logocadastro.png"
+import { toastAlerta } from '../../utils/toastAlerta'
 
 function Cadastro() {
 
@@ -62,25 +64,32 @@ function Cadastro() {
             
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuarioResposta)
-                alert('Usuário cadastrado com sucesso')
+                toastAlerta('Usuário cadastrado com sucesso', 'sucesso')
+                retornar();
             } catch (error) {
-                console.log(error)
-                alert('Erro ao cadastrar o Usuário')
+                toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
             }
+
         } else {
-            alert('Dados inconsistentes. Verifique as informações de cadastro')
-            setUsuario({...usuario, senha:""})
+            toastAlerta('Dados inconsistentes. Verifique as informações de cadastro.', 'erro')
+            setUsuario({ ...usuario, senha: "" })
             setConfirmaSenha("")
         }
 
         setIsLoading(false)
     }
+
     return (
         <>
-            <div className='w-screen h-screen bg-gray-50 flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8 bg-gray'>
-                <h2 className='text-orange-hl font-bold text-6xl mb-12'>ImpactHub</h2>
+            <div className='w-screen h-screen bg-gray-50 flex  justify-center items-center py-12 sm:px-6 lg:px-8 bg-gray'>
+                <div className='mr-44'>
+                <img 
+                    src={logoCadastro}
+                    alt='Logo ImpactHub'
+                />
+                </div>
                 <form className='flex justify-center items-center flex-col w-1/3 gap-3 bg-white p-5 rounded-lg shadow-lg' onSubmit={cadastrarNovoUsuario}>
-                    <p className='text-black text-2xl justify-center font-semibold'>Criar uma nova conta</p>
+                    <p className='text-orange-hl text-2xl justify-center font-semibold'>Criar uma nova conta</p>
                     <hr className='border-gray-hl w-full my-3'/>
                     <div className='flex flex-col w-full'>
                         <label htmlFor="tipo" className='font-semibold mb-2'>Tipo de conta</label>
@@ -186,12 +195,12 @@ function Cadastro() {
                                     width="24"
                                     visible={true}
                                 /> : 
-                                    <span>Cadastrar</span>}
+                                    <span className='font-semibold'>Cadastrar</span>}
                         </button>
                     </div>
                     <hr className='border-gray-hl w-full'/>
                     <div className='mt-2'>
-                        <p className='hover:text-orange-hl cursor-pointer' onClick={retornar}>Já possui uma conta?</p>
+                        <p className='hover:text-blue-hl cursor-pointer' onClick={retornar}>Já possui uma conta?</p>
                     </div>
                 </form>
             </div>
