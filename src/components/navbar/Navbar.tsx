@@ -21,9 +21,6 @@ function Navbar() {
         <div className='w-full flex justify-center bg-gradient-to-r from-orange-400 to-blue-hl py-10'>
           <div className='container flex justify-between text-lg'>
             <Link to='/home' className='text-2xl font-bold'>ImpactHub</Link>
-            <div>
-                <input className='w-96 border-2 border-black' type="search" name="" id="" />
-            </div>
             <div className='flex gap-4 text-white font-semibold'>
               <Link to='/home' className='hover:text-orange-hl'>Home</Link>
               <Link to='/temas' className='hover:text-orange-hl'>Temas</Link>

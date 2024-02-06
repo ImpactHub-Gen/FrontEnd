@@ -51,6 +51,7 @@ function Login() {
                             value={usuarioLogin.email}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
+                        
                     </div>
                     <div className="flex flex-col w-full">
                         <input 
@@ -61,6 +62,7 @@ function Login() {
                             className="mb-3 py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                             value={usuarioLogin.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            
                         />
                     </div>
                     <button type='submit' className='w-full bg-orange-hl hover:bg-orange-400 text-white p-3 rounded-lg font-semibold text-lg flex justify-center'>
