@@ -210,7 +210,7 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                         <option value="" selected disabled>Selecione um tema</option>
                         {temas.map((tema) => (
                             <>
-                                <option value={tema.id} >{tema.descricao}</option>
+                                <option value={tema.id} >{tema.nome}</option>
                             </>
                         ))}
                     </select>

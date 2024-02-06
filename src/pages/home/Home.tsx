@@ -37,9 +37,13 @@ function Home() {
         <div className='grid grid-cols-3'>
             <div className='flex h-screen p-32'>
                 <div className='border-2 border-black w-full h-2/4 p-10 rounded-lg'>
-                    <div className='grid grid-rows-2 justify-items-center'>
-                        <User size={48} weight='bold' />
-                        Informações do Perfil
+                    <div className='grid grid-rows-2 justify-items-center max-h-full'>
+                        <div className='flex items-center'>
+                            <img src={usuario?.foto} className='h-28 w-28 rounded-full' alt="Foto de perfil do usuário" />
+                        </div>
+                        <div className='flex items-center'>
+                            {usuario.nome}
+                        </div>
                     </div>
                 </div>
             </div>
