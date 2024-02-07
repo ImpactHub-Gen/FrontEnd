@@ -224,7 +224,7 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                     </select>
                 </div>
                 <button disabled={carregandoTema} type='submit' className='py-3 px-4 mt-8 text-lg bg-orange-hl hover:bg-orange-normal focus:outline-none rounded-md focus:ring-1 ring-orange-hl text-white font-semibold'>
-                    {carregandoTema ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+                    {carregandoTema ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Publicar'}
                 </button>
             </form>
         </div>
