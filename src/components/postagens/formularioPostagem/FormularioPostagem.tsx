@@ -97,17 +97,18 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
 
     function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
         setPostagem({
-            ...postagem,
-            [e.target.name]: e.target.value,
-            tema: tema,
-            usuario: usuario,
+          ...postagem,
+          [e.target.name]: e.target.value
         })
-    }
+    
+        console.log(JSON.stringify(tema))
+      }
 
     async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (id != undefined) {
+
             try {
                 await atualizar(`/postagens`, postagem, setPostagem, {
                     headers: {
