@@ -95,6 +95,15 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
         })
     }
 
+    function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
+        setPostagem({
+            ...postagem,
+            [e.target.name]: e.target.value,
+            tema: tema,
+            usuario: usuario,
+        })
+    }
+
     async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
@@ -154,12 +163,12 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
     const carregandoTema = tema.descricao === ''
 
     return (
-        <div className='container flex flex-col mx-auto items-center'>
-            <h1 className='text-4xl text-center my-8'>{id !== undefined ? 'Editar postagem' : 'Cadastrar postagem'}</h1>
+        <div className='container flex flex-col items-center justify-center mx-auto w-fit bg-white rounded-lg shadow-lg px-16 pb-16 my-12'>
+            <h1 className='text-4xl text-center my-8 text-blue-hl'>{id !== undefined ? 'Edite sua publicação' : 'Faça uma publicação e interaja com a comunidade!'}</h1>
 
-            <form onSubmit={gerarNovaPostagem} className='flex flex-col w-1/2 gap-4'>
-                <div className='flex flex-col'>
-                    <label htmlFor="titulo">Titulo da postagem</label>
+            <form onSubmit={gerarNovaPostagem} className='flex flex-col gap-4'>
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="titulo" className="font-semibold">Titulo</label>
                     <input 
                         value={postagem.titulo}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -167,45 +176,44 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                         placeholder="Titulo"
                         name="titulo"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                     />
                 </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="titulo">Texto da postagem</label>
-                    <input
-                        value={postagem.texto}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 
-                        type="text"
-                        placeholder="Texto da postagem"
-                        name="texto"
-                        required
-                        className="border-2 border-slate-700 rounded p-2"
-                    />
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="titulo" className="font-semibold" >Texto</label>
+                    <textarea
+                        placeholder="Descrição"
+                        rows={5}
+                        name='descricao'
+                        className="w-96 py-3 px-4 border resize-none border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
+                        value={tema.descricao}
+                        onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
+                     />
                 </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="titulo">Localização</label>
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="titulo" className="font-semibold">Localização</label>
                     <input
                         value={postagem.localizacao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}  
                         type="text"
                         placeholder="Localização"
                         name="localizacao"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                     />
                 </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="titulo">Imagem</label>
+                <div className='flex flex-col gap-2'>
+                    <label htmlFor="titulo" className="font-semibold">Imagem</label>
                     <input 
                         value={postagem.imagem}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 
                         type="text"
                         placeholder="Imagem"
                         name="imagem"
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="py-3 px-4 border border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
                     />
                 </div>
-                <div className=' flex flex-col'>
-                    <p>Tema da postagem</p>
+                <div className='flex flex-col gap-2'>
+                    <p className="font-semibold">Tema</p>
                     <select name="tema" id="tema" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarTemaPorId(e.currentTarget.value)}>
                         <option value="" selected disabled>Selecione um tema</option>
                         {temas.map((tema) => (
@@ -215,7 +223,7 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                         ))}
                     </select>
                 </div>
-                <button disabled={carregandoTema} type='submit' className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2'>
+                <button disabled={carregandoTema} type='submit' className='py-3 px-4 mt-8 text-lg bg-orange-hl hover:bg-orange-normal focus:outline-none rounded-md focus:ring-1 ring-orange-hl text-white font-semibold'>
                     {carregandoTema ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
                 </button>
             </form>
