@@ -1,5 +1,5 @@
 import {ChangeEvent, useEffect, useState, useContext} from 'react'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import {cadastrarUsuario} from '../../services/Service'
 import {RotatingLines} from 'react-loader-spinner'
 import Usuario from '../../models/Usuario'
@@ -197,7 +197,12 @@ function Cadastro() {
                     </div>
                     <hr className='border-gray-hl w-full'/>
                     <div className='mt-2'>
-                        <p className='hover:text-blue-hl cursor-pointer' onClick={retornar}>Já possui uma conta?</p>
+                    <p>
+                        Já possui uma conta? {''}
+                        <Link to="/login" className="text-blue-normal font-bold  hover:text-blue-hl"> 
+                        Faça login
+                        </Link>
+                    </p>
                     </div>
                 </form>
             </div>

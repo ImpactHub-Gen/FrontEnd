@@ -34,13 +34,13 @@ function Home() {
     }, [postagens.length])
     return (
         <>
-        <div className='grid grid-cols-3'>
-            <div className='flex h-screen px-32 py-10'>
+        <div className='grid grid-cols-3 overflow-y-hidden'>
+            <div className='flex h-screen px-32 py-16'>
                 <div className='container mx-auto rounded-2xl'>
                     <div className='w-full h-56 object-cover bg-gradient-to-b from-blue-hl to-orange-400 rounded-t-2xl'></div>
                     <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full w-56 mx-auto mt-[-7rem] border-8 border-white relative z-10' />
                     <div className='relative mt-[-6rem] h-56 flex flex-col bg-gradient-to-t from-blue-hl to-orange-400 text-white text-2xl items-center justify-center rounded-b-2xl'>
-                        <p>{usuario.nome}</p>
+                        <p className='mt-7'>{usuario.nome}</p>
                     </div>
                 </div>
             </div>

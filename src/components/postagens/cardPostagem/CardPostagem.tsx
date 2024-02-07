@@ -33,7 +33,7 @@ function CardPostagem({post}: CardPostagemProps) {
     return (
         <div className='flex flex-col overflow-hidden justify-between bg-white rounded-lg shadow-lg'>
             <div>
-                <div className='flex w-full text-white py-2 px-4 items-center justify-between gap-4 border-b bg-orange-hl'>
+                <div className='flex w-full text-white py-2 px-4 items-center justify-between gap-4 border-b bg-blue-hl'>
                     <div className="flex justify-center items-center">
                         <img src={post.usuario?.foto} className='h-12 rounded-full border-2 border-white' alt="" />
                         <h3 className='text-lg font-semibold text-center pl-3'>{post.usuario?.nome} </h3>
@@ -64,7 +64,7 @@ function CardPostagem({post}: CardPostagemProps) {
                 <Link to={`#`} className='w-full text-white font-semibold bg-gray flex items-center justify-center py-3'>
                     <GoHeartFill size={32} color={iconColor} onClick={handleClick}/>
                 </Link>
-                <Link to={`#`} className='w-full text-white font-semibold bg-blue-normal hover:bg-blue-hl flex items-center justify-center'>
+                <Link to={`#`} className='w-full text-white font-semibold bg-blue-hl hover:bg-blue-normal flex items-center justify-center'>
                     <ChatCircleDots size={32} color="white"/>
                 </Link>
                 <Link to={`#`} className='text-white bg-orange-hl hover:bg-orange-normal font-semibold w-full flex items-center justify-center'>

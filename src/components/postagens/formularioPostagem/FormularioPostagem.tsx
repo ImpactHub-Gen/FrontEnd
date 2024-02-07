@@ -116,6 +116,7 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                     },
                 })
                 toastAlerta('Postagem atualizada com sucesso', 'sucesso')
+                retornar()
 
             } catch (error: any) {
                 if (error.toString().includes('403')) {
@@ -161,11 +162,15 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
         }
     }
 
+    function retornar() {
+        navigate("/home")
+      }
+
     const carregandoTema = tema.descricao === ''
 
     return (
-        <div className='container flex flex-col items-center justify-center mx-auto w-fit bg-white rounded-lg shadow-lg px-16 pb-16 my-12'>
-            <h1 className='text-4xl text-center my-8 text-blue-hl'>{id !== undefined ? 'Edite sua publicação' : 'Faça uma publicação e interaja com a comunidade!'}</h1>
+        <div className='container flex flex-col items-center justify-center mx-auto w-fit bg-white rounded-lg shadow-lg px-11 pb-11 my-16'>
+            <h1 className='text-4xl text-center my-8 text-blue-hl'>{id !== undefined ? 'Edite sua publicação' : 'Faça uma publicação!'}</h1>
 
             <form onSubmit={gerarNovaPostagem} className='flex flex-col gap-4'>
                 <div className='flex flex-col gap-2'>
@@ -181,18 +186,18 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                     />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label htmlFor="titulo" className="font-semibold" >Texto</label>
+                    <label htmlFor="texto" className="font-semibold" >Texto</label>
                     <textarea
-                        placeholder="Descrição"
+                        placeholder="Texto da postagem"
                         rows={5}
-                        name='descricao'
+                        name='texto'
                         className="w-96 py-3 px-4 border resize-none border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
-                        value={tema.descricao}
+                        value={postagem.texto}
                         onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)}
                      />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label htmlFor="titulo" className="font-semibold">Localização</label>
+                    <label htmlFor="localizacao" className="font-semibold">Localização</label>
                     <input
                         value={postagem.localizacao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}  
@@ -203,7 +208,7 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                     />
                 </div>
                 <div className='flex flex-col gap-2'>
-                    <label htmlFor="titulo" className="font-semibold">Imagem</label>
+                    <label htmlFor="imagem" className="font-semibold">Imagem</label>
                     <input 
                         value={postagem.imagem}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 

@@ -25,7 +25,7 @@ function Sobre() {
                         <p className="mb-6 font-semibold">
                         Nossa missão é oferecer um espaço onde ONGs podem compartilhar ideias, recursos e paixões. Ao unir forças, podemos construir um futuro mais justo e solidário para todos. Junte-se a nós no ImpactHub e faça parte desta rede global de agentes de mudança comprometidos com a transformação social.
                         </p>
-                        <img src={sobreLogo} alt="Nossa equipe" className="w-full h-full object-cover rounded-md" />
+                        <img src="https://cdn.discordapp.com/attachments/1180165078037827635/1204638679679897700/4.png?ex=65d57632&is=65c30132&hm=5447613ae4f6bce0308713aef42aedb924e3fcc30671a231169f56f687ec2f3b&" alt="Nossa equipe" className="w-full h-80 object-cover rounded-md" />
                     </div>
                 </div>
 
@@ -39,40 +39,40 @@ function Sobre() {
                             <img src={sobreLogoAna} alt="ana" className="w-20 h-20 object-cover rounded-full mb-2" />
                             <p className="text-black-600 text-center font-semibold">Ana Paula</p>
                             <div className='grid grid-cols-2 gap-4 mt-2'>
-                                <Link to='//linkedin.com/in/ana-mcruz/' target='_blank'><LinkedinLogo size={32} weight='bold' color="#0072b1"></LinkedinLogo></Link>
-                                <Link to='//github.com/anap-moura/' target='_blank'><GithubLogo size={32} weight='bold' color="#572364"></GithubLogo></Link>
+                                <Link to='//linkedin.com/in/ana-mcruz/' target='_blank'><LinkedinLogo size={32} weight='bold'></LinkedinLogo></Link>
+                                <Link to='//github.com/anap-moura/' target='_blank'><GithubLogo size={32} weight='bold'></GithubLogo></Link>
                             </div>
                         </div>
                         <div className="px-14 text-center flex flex-col items-center">
                             <img src={sobreLogoBreno} alt="breno"className="w-20 h-20 object-cover rounded-full mb-2" />
                             <p className="text-black-600 text-center font-semibold">Breno Menezes</p>
                             <div className='grid grid-cols-2 gap-4 mt-2'>
-                                <Link to='//linkedin.com/in/breno-mnz/' target='_blank'><LinkedinLogo size={32} weight='bold' color="#0072b1"></LinkedinLogo></Link>
-                                <Link to='//github.com/BrenoMnz' target='_blank'><GithubLogo size={32} weight='bold' color="#572364"></GithubLogo></Link>
+                                <Link to='//linkedin.com/in/breno-mnz/' target='_blank'><LinkedinLogo size={32} weight='bold'></LinkedinLogo></Link>
+                                <Link to='//github.com/BrenoMnz' target='_blank'><GithubLogo size={32} weight='bold'></GithubLogo></Link>
                             </div>
                         </div>
                         <div className="px-14 text-center flex flex-col items-center">
                             <img src={sobreLogoNayane} alt="nayane"className="w-20 h-20 object-cover rounded-full mb-2" />
                             <p className="text-black-600 text-center font-semibold">Nayane Rosa</p>
                             <div className='grid grid-cols-2 gap-4 mt-2'>
-                                <Link to='//linkedin.com/in/nayane-rosa-9b27aa158/' target='_blank'><LinkedinLogo size={32} weight='bold' color="#0072b1"></LinkedinLogo></Link>
-                                <Link to='//github.com/NayaneRosa' target='_blank'><GithubLogo size={32} weight='bold' color="#572364"></GithubLogo></Link>
+                                <Link to='//linkedin.com/in/nayane-rosa-9b27aa158/' target='_blank'><LinkedinLogo size={32} weight='bold'></LinkedinLogo></Link>
+                                <Link to='//github.com/NayaneRosa' target='_blank'><GithubLogo size={32} weight='bold'></GithubLogo></Link>
                             </div>
                         </div>
                         <div className="px-14 text-center flex flex-col items-center">
                             <img src={sobreLogoEwerton} alt="ewerton"className="w-20 h-20 object-cover rounded-full mb-2" />
                             <p className="text-black-600 text-center font-semibold">Ewerton Gustavo</p>
                             <div className='grid grid-cols-2 gap-4 mt-2'>
-                                <Link to='//linkedin.com/in/ewerton-gustavo/' target='_blank'><LinkedinLogo size={32} weight='bold' color="#0072b1"></LinkedinLogo></Link>
-                                <Link to='//github.com/Ewerton51' target='_blank'><GithubLogo size={32} weight='bold' color="#572364"></GithubLogo></Link>
+                                <Link to='//linkedin.com/in/ewerton-gustavo/' target='_blank'><LinkedinLogo size={32} weight='bold'></LinkedinLogo></Link>
+                                <Link to='//github.com/Ewerton51' target='_blank'><GithubLogo size={32} weight='bold'></GithubLogo></Link>
                             </div>
                         </div>
                         <div className="px-14 text-center flex flex-col items-center">
                             <img src={sobreLogoLuis} alt="luis"className="w-20 h-20 object-cover rounded-full mb-2" />
                             <p className="text-black-600 text-center font-semibold">Luís Felipe Sibim</p>
                             <div className='grid grid-cols-2 gap-4 mt-2'>
-                                <Link to='//linkedin.com/in/luisfelipesibim/' target='_blank'><LinkedinLogo size={32} weight='bold' color="#0072b1"></LinkedinLogo></Link>
-                                <Link to='//github.com/lfsibim' target='_blank'><GithubLogo size={32} weight='bold' color="#572364"></GithubLogo></Link>
+                                <Link to='//linkedin.com/in/luisfelipesibim/' target='_blank'><LinkedinLogo size={32} weight='bold'></LinkedinLogo></Link>
+                                <Link to='//github.com/lfsibim' target='_blank'><GithubLogo size={32} weight='bold'></GithubLogo></Link>
                             </div>
                         </div>
                     </div>
