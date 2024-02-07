@@ -125,8 +125,8 @@ console.log(tema)
           <div className="flex flex-col gap-2">
             <label htmlFor="descricao" className='w-full font-semibold'>Descrição do tema</label>
             <textarea
-              placeholder="Descrição"
               rows={5}
+              placeholder="Descrição"
               name='descricao'
               className="w-96 py-3 px-4 border resize-none border-gray-hl focus:outline-none rounded-md focus:ring-1 ring-orange-hl"
               value={tema.descricao}
