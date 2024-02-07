@@ -135,7 +135,7 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                 })
 
                 toastAlerta('Postagem cadastrada com sucesso', 'sucesso')
-
+//teste
                 if (setPosts != undefined && posts != undefined) {
                     setPosts([...posts, postagem])
                 }
