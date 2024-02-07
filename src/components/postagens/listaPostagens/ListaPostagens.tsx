@@ -19,17 +19,19 @@ function ListaPostagens({getPosts, posts}: ListaPostagensProps) {
     return (
         <>
             {posts.length === 0 && (
-                <ThreeDots
-                visible={true}
-                height="200"
-                width="200"
-                color="orange"
-                radius="9"
-                ariaLabel="three-dots-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                />
-            )}
+                <div className='flex w-full justify-center'>
+                    <ThreeDots
+                    visible={true}
+                    height="200"
+                    width="200"
+                    color="orange"
+                    radius="9"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    />
+                </div>
+                 )}
             <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4'>
                 {posts.map((postagem) => (
                     <CardPostagem key={postagem.id} post={postagem} />

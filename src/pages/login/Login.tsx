@@ -78,7 +78,7 @@ function Login() {
                     <hr className='border-gray-hl w-full my-6'/>
                     <p>
                         Ainda não tem uma conta? {''}
-                        <Link to="/cadastro" className="text-orange-hl font-bold  hover:text-orange-400"> 
+                        <Link to="/cadastro" className="text-blue-normal font-bold  hover:text-blue-hl"> 
                         Cadastre-se
                         </Link>
                     </p>

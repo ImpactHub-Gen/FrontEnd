@@ -41,7 +41,7 @@ function ListaTemas() {
   return (
     <>
         {temas.length === 0 && (
-          <div className='flex w-full justify-center ml-80 pl-80 '>
+          <div className='flex w-full justify-center ml-80 pl-80'>
             <ThreeDots
               visible={true}
               color='orange'
