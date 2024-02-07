@@ -35,7 +35,7 @@ function CardPostagem({post}: CardPostagemProps) {
             <div>
                 <div className='flex w-full text-white py-2 px-4 items-center justify-between gap-4 border-b bg-blue-hl'>
                     <div className="flex justify-center items-center">
-                        <img src={post.usuario?.foto} className='h-12 rounded-full border-2 border-white' alt="" />
+                        <img src={post.usuario?.foto} className='h-12 w-12 rounded-full border-2 border-white' alt="" />
                         <h3 className='text-lg font-semibold text-center pl-3'>{post.usuario?.nome} </h3>
                     </div>
                     <div className="flex">
