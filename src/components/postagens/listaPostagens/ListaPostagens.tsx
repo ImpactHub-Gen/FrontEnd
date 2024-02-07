@@ -30,7 +30,7 @@ function ListaPostagens({getPosts, posts}: ListaPostagensProps) {
                 wrapperClass=""
                 />
             )}
-            <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-4'>
+            <div className='container mx-auto my-4 grid grid-cols-1 gap-4'>
                 {posts.map((postagem) => (
                     <CardPostagem key={postagem.id} post={postagem} />
                 ))}

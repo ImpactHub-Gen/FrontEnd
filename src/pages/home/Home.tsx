@@ -35,33 +35,24 @@ function Home() {
     return (
         <>
         <div className='grid grid-cols-3'>
-            <div className='flex h-screen p-32'>
-                <div className='border-2 border-black w-full h-2/4 p-10 rounded-lg'>
-                    <div className='grid grid-rows-2 justify-items-center max-h-full'>
-                        <div className='flex items-center'>
-                            <img src={usuario?.foto} className='h-28 w-28 rounded-full' alt="Foto de perfil do usuário" />
-                        </div>
-                        <div className='flex items-center'>
-                            {usuario.nome}
-                        </div>
+            <div className='flex h-screen px-32 py-10'>
+                <div className='container mx-auto rounded-2xl'>
+                    <div className='w-full h-56 object-cover bg-gradient-to-b from-blue-hl to-orange-400 rounded-t-2xl'></div>
+                    <img src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} className='rounded-full w-56 mx-auto mt-[-7rem] border-8 border-white relative z-10' />
+                    <div className='relative mt-[-6rem] h-56 flex flex-col bg-gradient-to-t from-blue-hl to-orange-400 text-white text-2xl items-center justify-center rounded-b-2xl'>
+                        <p>{usuario.nome}</p>
                     </div>
                 </div>
             </div>
-            <div className='h-screen overflow-y-auto'>
-               <div>
-                    <FormularioPostagem posts={postagens} setPosts={setPostagens} />
-               </div>
+            <div className='h-screen overflow-y-auto hiddenScrollbar'>
                <div>
                     <ListaPostagens posts={postagens} getPosts={buscarPostagens} />
                </div>
             </div>
-            <div className='flex h-screen p-20 justify-center'>
-                <div className='border-2 border-black w-full h-2/4 p-20 rounded-lg'>
-                    <div className='grid grid-rows-2 justify-items-center'>
-                        <Images size={48} weight='bold' />
-                        Postagens prioritárias
-                    </div>
-                </div>
+            <div className='flex h-screen justify-center'>
+                <div>
+                    <FormularioPostagem posts={postagens} setPosts={setPostagens} />
+               </div>
             </div>
         </div>
       </>

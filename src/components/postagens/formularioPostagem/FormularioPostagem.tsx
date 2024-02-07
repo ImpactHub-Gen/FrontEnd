@@ -95,10 +95,20 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
         })
     }
 
+    function atualizarEstadoTextArea(e: ChangeEvent<HTMLTextAreaElement>) {
+        setPostagem({
+          ...postagem,
+          [e.target.name]: e.target.value
+        })
+    
+        console.log(JSON.stringify(tema))
+      }
+
     async function gerarNovaPostagem(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
 
         if (id != undefined) {
+
             try {
                 await atualizar(`/postagens`, postagem, setPostagem, {
                     headers: {
@@ -154,10 +164,10 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
     const carregandoTema = tema.descricao === ''
 
     return (
-        <div className='container flex flex-col mx-auto items-center'>
+        <div className='container flex flex-col w-96 items-center'>
             <h1 className='text-4xl text-center my-8'>{id !== undefined ? 'Editar postagem' : 'Cadastrar postagem'}</h1>
 
-            <form onSubmit={gerarNovaPostagem} className='flex flex-col w-1/2 gap-4'>
+            <form onSubmit={gerarNovaPostagem} className='flex flex-col w-full gap-4'>
                 <div className='flex flex-col'>
                     <label htmlFor="titulo">Titulo da postagem</label>
                     <input 
@@ -172,14 +182,14 @@ function FormularioPostagem({ posts, setPosts }: FormularioPostagemProps) {
                 </div>
                 <div className='flex flex-col'>
                     <label htmlFor="titulo">Texto da postagem</label>
-                    <input
+                    <textarea
+                        rows={5}
                         value={postagem.texto}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 
-                        type="text"
+                        onChange={(e: ChangeEvent<HTMLTextAreaElement>) => atualizarEstadoTextArea(e)} 
                         placeholder="Texto da postagem"
                         name="texto"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-slate-700 rounded p-2 resize-none"
                     />
                 </div>
                 <div className='flex flex-col'>
