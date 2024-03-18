@@ -14,7 +14,7 @@ function Footer() {
   if(usuario.token !== '') {
     footerComponent = (
       <div className="flex justify-center bg-gradient-to-r from-blue-hl to-orange-400 text-white">
-          <div className="container flex flex-col items-center py-4">
+          <div className="container flex flex-col items-center py-3">
             <p className='text-xl font-bold'>Construindo conexões, impulsionando mudanças</p>
             <p className='text-lg'>ImpactHub | &copy; Copyright {data}</p>
             <div className='flex gap-4 mt-2'>

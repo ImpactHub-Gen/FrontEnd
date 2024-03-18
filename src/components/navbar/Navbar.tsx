@@ -22,7 +22,7 @@ function Navbar() {
           <div className='container flex justify-between text-lg'>
           <Link to='/home' className='text-2xl font-bold'>
             <img
-              src='https://media.discordapp.net/attachments/1180165078037827635/1204424420941369354/ImpactHub_navbar.png?ex=65d4aea7&is=65c239a7&hm=b87ce4928f691522e16d1bde012a617a7061579dc3471a7ecee8483d564ff95a&=&format=webp&quality=lossless'
+              src='https://media.discordapp.net/attachments/1180165078037827635/1204424420941369354/ImpactHub_navbar.png?ex=6602d327&is=65f05e27&hm=00b900b86cfeb9a2dbe022bf8d16b3b6058b288b190e61c447e6e15df4f26806&=&format=webp&quality=lossless'
               alt='Logo'
               className='h-12 -mt-3'
               style={{ height: '150%' }} 

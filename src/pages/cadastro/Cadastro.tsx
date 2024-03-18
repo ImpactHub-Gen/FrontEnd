@@ -83,7 +83,7 @@ function Cadastro() {
         <>
             <div className='w-screen h-screen bg-gray-50 flex  justify-center items-center py-12 sm:px-6 lg:px-8 bg-gray'>
                 <div className='mr-44'>
-                <img src="https://media.discordapp.net/attachments/1180165078037827635/1204406380178440222/ImpactHub_Login.gif?ex=65d49dd9&is=65c228d9&hm=7c1eb62b986803a4776a7defa891a6dfa8ec1050ee3bf08eb386bc7c4a3d44ba&=&width=559&height=559"></img>
+                <img src="https://media.discordapp.net/attachments/1180165078037827635/1204406380178440222/ImpactHub_Login.gif?ex=6602c259&is=65f04d59&hm=a11efb9bccdaa8f7d6925927adfb2243eef10dedf7ec1f52ef80aa7ca927b9fd&=&width=559&height=559"></img>
                 </div>
                 <form className='flex justify-center items-center flex-col w-1/3 gap-3 bg-white p-5 rounded-lg shadow-lg' onSubmit={cadastrarNovoUsuario}>
                     <p className='text-orange-hl text-2xl justify-center font-semibold'>Criar uma nova conta</p>

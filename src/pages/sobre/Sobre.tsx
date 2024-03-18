@@ -25,7 +25,7 @@ function Sobre() {
                         <p className="mb-6 font-semibold">
                         Nossa missão é oferecer um espaço onde ONGs podem compartilhar ideias, recursos e paixões. Ao unir forças, podemos construir um futuro mais justo e solidário para todos. Junte-se a nós no ImpactHub e faça parte desta rede global de agentes de mudança comprometidos com a transformação social.
                         </p>
-                        <img src="https://cdn.discordapp.com/attachments/1180165078037827635/1204638679679897700/4.png?ex=65d57632&is=65c30132&hm=5447613ae4f6bce0308713aef42aedb924e3fcc30671a231169f56f687ec2f3b&" alt="Nossa equipe" className="w-full h-80 object-cover rounded-md" />
+                        <img src="https://media.discordapp.net/attachments/1180165078037827635/1204638679679897700/4.png?ex=66039ab2&is=65f125b2&hm=1bf0b2c055e63b9843dfc1c527e0a939bcdc333453673c49faddb078a5d494eb&=&format=webp&quality=lossless" alt="Nossa equipe" className="w-full h-80 object-cover rounded-md" />
                     </div>
                 </div>
 
